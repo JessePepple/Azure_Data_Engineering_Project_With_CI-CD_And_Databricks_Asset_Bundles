@@ -109,7 +109,10 @@
 						"type": "DatasetReference",
 						"parameters": {
 							"p_container": "bronze",
-							"p_folder": "monitor",
+							"p_folder": {
+								"value": "@{pipeline().parameters.table_name}_last_load",
+								"type": "Expression"
+							},
 							"p_json": "last_load.json"
 						}
 					},
@@ -246,7 +249,10 @@
 									"type": "DatasetReference",
 									"parameters": {
 										"p_container": "bronze",
-										"p_folder": "monitor",
+										"p_folder": {
+											"value": "@{pipeline().parameters.table_name}_last_load",
+											"type": "Expression"
+										},
 										"p_json": "emptyjson.json"
 									}
 								}
@@ -257,7 +263,7 @@
 									"type": "DatasetReference",
 									"parameters": {
 										"p_container": "bronze",
-										"p_folder": "monitor",
+										"p_folder": "@{pipeline().parameters.table_name}_last_load",
 										"p_json": "last_load.json"
 									}
 								}
