@@ -1,0 +1,9 @@
+{
+	"name": "adfspotifyjess",
+	"location": "uksouth",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "94b2672f-c30c-4210-a43e-178666321641",
+		"tenantId": "6e0eb70b-408a-43a1-aa52-49b6ae58286b"
+	}
+}
