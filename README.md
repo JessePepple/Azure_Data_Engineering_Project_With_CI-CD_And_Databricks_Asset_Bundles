@@ -5,7 +5,7 @@ This project demonstrates a complete Azure Data Engineering solution that proces
 
 <img width="1444" height="902" alt="CI:CD" src="https://github.com/user-attachments/assets/19fe16d3-200a-4da4-be53-b9be391e7d4f" />
 
-For the detailed Storytelling of this project please visit this link: https://www.jesseportfolio.co.uk/post/azure-end-to-end-databricks-project
+For the detailed Storytelling of this project please visit this link: https://www.jesseportfolio.co.uk/post/musicstreaming-azure-data-engineering-project-with-ci-cd-and-databricks_asset_bundles
 
 ## Architecture Summary
 1. Data Source: Azure SQL Database
@@ -220,4 +220,4 @@ Since our Data was loaded in Databricks SQL Warehouse I tested the curated data 
 
 ## BI REPORTING
 
-Thanks to Databricks Partner Connect, I was able to provide the BI connector to the Data Analyst, enabling them to directly query and visualize the cleaned data in Power BI with ease—without needing to rely on the SQL Data Warehouse. Followed after was loading my data in Synapse Warehouse.
+Leveraging Databricks Partner Connect, I provided a BI connector to data analysts, enabling them to directly query and visualize the cleaned data in Power BI without relying on the SQL Data Warehouse. Subsequently, I loaded the curated datasets into the Synapse Data Warehouse for additional analytics and reporting. Upon completing the project, I deployed all notebooks and pipelines to the PROD folder in Databricks using Databricks Asset Bundles, and version-controlled the project by pushing it to my GitHub repository.
