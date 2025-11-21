@@ -124,8 +124,7 @@ The pipeline leverages an IF Statement activity to manage data ingestion. When n
 <img width="1440" height="718" alt="Screenshot 2025-11-18 at 20 37 51" src="https://github.com/user-attachments/assets/6f586640-dac3-4081-853a-cc56ef7c3bb0" />
 
 <img width="1440" height="718" alt="Screenshot 2025-11-18 at 20 38 01" src="https://github.com/user-attachments/assets/8fdaee45-33a9-4ec3-9d2b-fcf84358ee21" />
-
-Pipeline parameters were configured for sink ingestion. Although a ForEach activity was initially considered, the limited number of tables meant a simpler approach without an array of dictionaries was sufficient.
+By combining the JSON watermarking technique with the pipeline parameters I created, I was able to build a fully dynamic SQL query that enables seamless querying across multiple tables. The query uses the CDC column to load only records with a timestamp greater than the value stored in last_load.json. Since this was the initial load, the default watermark value was set to "1900-01-01", ensuring that all historical records were captured before transitioning into incremental ingestion. Pipeline parameters were configured for sink ingestion. Although a ForEach activity was initially considered, the limited number of tables meant a simpler approach without an array of dictionaries was sufficient.
 
 <img width="1440" height="718" alt="Screenshot 2025-11-18 at 20 38 09" src="https://github.com/user-attachments/assets/f158e233-1453-485a-aabb-19d2a4310e1f" />
 
