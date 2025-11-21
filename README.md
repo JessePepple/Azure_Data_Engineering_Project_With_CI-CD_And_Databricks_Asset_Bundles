@@ -21,6 +21,8 @@ Ingestion is designed to be incremental, reducing cost and runtime.
 
 Pipelines use triggers, datasets, and linked services to securely move data.
 
+Logic Apps was also used to track and give updates on piepline developmnents.
+
 3. Data Processing & Enrichment: Azure Databricks
 
 Azure Databricks handles data transformations using:
