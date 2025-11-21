@@ -3,7 +3,8 @@
 
 This project demonstrates a complete Azure Data Engineering solution that processes data from ingestion to transformation and delivery using modern cloud-native best practices. The architecture leverages Azure SQL, Azure Data Factory, Azure Databricks, and Delta Live Tables (DLT) to build a scalable, reliable, and production-ready data pipeline.
 
-<img width="1444" height="902" alt="CI:CD Spotify Project" src="https://github.com/user-attachments/assets/e4fefba5-4a79-4c3f-b0fa-0f8f27162fe5" />
+<img width="1444" height="902" alt="CI:CD" src="https://github.com/user-attachments/assets/19fe16d3-200a-4da4-be53-b9be391e7d4f" />
+
 
 
 ## Architecture Summary
@@ -21,7 +22,7 @@ Ingestion is designed to be incremental, reducing cost and runtime.
 
 Pipelines use triggers, datasets, and linked services to securely move data.
 
-Logic Apps was also used to track and give updates on piepline developmnents.
+Logic Apps was also used to track and give updates on pipeline developments.
 
 3. Data Processing & Enrichment: Azure Databricks
 
@@ -76,8 +77,6 @@ The project follows CI/CD standards for reliable deployment:
 Source control maintained in Git.
 
 Databricks notebooks and configurations managed with version control.
-
-ADF pipelines integrated with ARM templates / Bicep / Git mode.
 
 Environments follow Dev → Test → Prod promotion workflows.
 
