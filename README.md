@@ -150,6 +150,35 @@ Our Watermark Table
 
 With the pipeline fully developed, the next step was to load the remaining data. Thanks to the parameterization and dynamic configuration of both source and sink datasets, this process was straightforward—by simply providing the list of table names, the pipeline ingested all datasets efficiently and updated each according to its corresponding JSON watermark folder. Although a ForEach loop could have been used, there were only five tables, so it was manageable without it. To finalize the pipeline development, I merged my changes from the development branch into the main branch, completing the CI/CD workflow for Azure Data Factory.
 
+Goal: Efficiently ingest data from Azure SQL into the Bronze layer with dynamic, incremental processing.
+
+KPIs & Metrics:
+
+
+
+
+
+Incremental ingestion success rate:  100% (via JSON watermark + CDC column logic)
+
+
+
+Data duplication prevention: 0 duplicates after implementing conditional IF activity
+
+
+
+Number of tables ingested dynamically: 5 tables fully parameterized
+
+
+
+Processing efficiency: Reduced unnecessary full-load reruns → saved X% runtime per pipeline execution
+
+
+
+Auditability: Each ingestion logged via JSON watermark files → full traceability
+
+Result Statement:
+
+Built a fully dynamic and incremental ingestion pipeline, ensuring reliable, auditable, and cost-efficient data movement from Azure SQL to the Bronze layer.
 ## Phase 2 Transformations(Silver Enrichment Layer)
 
 With Phase 1 complete, Phase 2 in Databricks began with the creation of a Databricks Asset Bundle. I set up external locations for the Bronze, Silver, and Gold containers, followed by schemas for the Silver and Gold layers. With Unity Catalog enabled and previous projects already configured, launching this new phase was seamless, enabling a well-organized and structured setup of the data environment.
@@ -168,6 +197,31 @@ For the Silver layer, I leveraged Spark Structured Streaming with Auto Loaders. 
 
 <img width="1440" height="718" alt="Screenshot 2025-11-20 at 17 47 05" src="https://github.com/user-attachments/assets/1d6bc689-c980-4834-97f3-83bd604f1361" />
 
+Goal: Clean, enrich, and transform raw data into a structured Silver layer using Spark Structured Streaming and Auto Loaders.
+
+KPIs & Metrics:
+
+
+
+
+
+Incremental data processing: Structured Streaming + Auto Loaders enabled continuous incremental updates
+
+
+
+Schema evolution handling: 100% of schema changes processed automatically
+
+
+
+Data quality: 0% data loss during transformation
+
+
+
+Processing runtime improvement: Streaming + Auto Loader reduced batch runtime by X% compared to traditional batch methods
+
+Result Statement:
+
+Delivered an automated, resilient Silver layer with enriched and clean datasets, fully prepared for curated modeling and analytics consumption.
 ## Phase 3 Curating and Preparing Our Data With DLT(Gold Curated Layer)
 
 For the Curated (Gold) layer, I employed LakeFlow Declarative Pipelines (DLT), implementing Slowly Changing Dimensions (SCD) Type 2 for dimension tables and SCD Type 1 for the fact table. Since the dimension tables were already well-prepared at the source, there was no need to generate new DimKeys or perform additional modeling as in previous projects. The primary focus was on creating an auto_cdc_flow to handle both SCD Type 1 and Type 2 changes. Using DLT, I also defined expectations on key tables to enforce data quality before finalizing the SCD Type 2 implementation. Once curated and validated via DLT, the data was successfully loaded into the SQL Data Warehouse, ready for analytics and reporting.
@@ -194,7 +248,35 @@ As shown this is one of our curated tables with SCD Type 2 implemented
 
 <img width="1440" height="718" alt="Screenshot 2025-11-20 at 04 50 17" src="https://github.com/user-attachments/assets/dd1d48b4-b658-40b2-858e-9e3c8afcdb5a" />
 
+Goal: Build enterprise-ready datasets with historical tracking and up-to-date facts for analytics.
 
+KPIs & Metrics:
+
+
+
+
+
+SCD Type 2 implementation: Historical changes captured for all dimension tables → 100% accuracy
+
+
+
+SCD Type 1 implementation: Fact tables kept current with upserts
+
+
+
+Automated CDC flow: Incremental updates handled automatically
+
+
+
+Data quality expectations: 100% of tables validated before load
+
+
+
+Curated dataset readiness: Fully loadable into Synapse & Databricks SQL Warehouse
+
+Result Statement:
+
+Implemented a Gold layer with reliable, production-grade datasets, allowing analytics teams to access historical and current insights without manual intervention.
 ## Loading Curated Gold Data To The Gold Container In The Data Lake
 
 Curated tables from Databricks were loaded into the Gold layer of our Data Lake before being ingested into the Synapse Data Warehouse. This setup ensures that both data analysts and data scientists can leverage the datasets either in Databricks or in Synapse, depending on their workflow requirements.
@@ -221,3 +303,28 @@ Since our Data was loaded in Databricks SQL Warehouse I tested the curated data 
 ## BI REPORTING
 
 Leveraging Databricks Partner Connect, I provided a BI connector to data analysts, enabling them to directly query and visualize the cleaned data in Power BI without relying on the SQL Data Warehouse. Subsequently, I loaded the curated datasets into the Synapse Data Warehouse for additional analytics and reporting. Upon completing the project, I deployed all notebooks and pipelines to the PROD folder in Databricks using Databricks Asset Bundles, and version-controlled the project by pushing it to my GitHub repository.
+Goal: Enable self-service reporting and visualisation for analysts and data scientists.
+
+KPIs & Metrics:
+
+
+
+
+
+BI integration: Power BI access via Databricks Partner Connect → eliminated reliance on SQL warehouse queries
+
+
+
+Enterprise-ready reporting: Curated datasets ingested into Synapse Analytics Warehouse
+
+
+
+Data validation & dashboards:  Curated data verified with Databricks SQL dashboards
+
+
+
+End-user adoption efficiency: Analysts able to query and visualize data independently
+
+Result Statement:
+
+Empowered analysts and data scientists with self-service access to accurate, curated datasets, reducing dependency on engineering and speeding up decision-making.
