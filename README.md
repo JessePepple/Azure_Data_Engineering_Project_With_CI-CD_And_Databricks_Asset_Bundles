@@ -3,6 +3,50 @@
 
 This project demonstrates a complete Azure Data Engineering solution that processes data from ingestion to transformation and delivery using modern cloud-native best practices. The architecture leverages Azure SQL, Azure Data Factory, Azure Databricks, and Delta Live Tables (DLT) to build a scalable, reliable, and production-ready data pipeline.
 
+Project Impact Overview
+
+End-to-End Automation:
+
+100% of the pipeline automated from ingestion → transformation → delivery using Azure Data Factory, Databricks, and Delta Live Tables (DLT).
+
+Dynamic, incremental ingestion with JSON watermarking and CDC logic ensures zero duplication and full traceability.
+
+Data Quality & Reliability:
+
+SCD Type 2 implemented on dimension tables and SCD Type 1 on fact tables, enabling accurate historical tracking and up-to-date facts.
+
+Data quality expectations validated for 100% of tables before load.
+
+Fully auditable pipeline with logging of ingestion, transformations, and CDC events.
+
+Scalability & Maintainability:
+
+Medallion Architecture (Bronze → Silver → Gold) supports multiple sources, schema evolution, and incremental updates without manual intervention.
+
+CI/CD deployment via Azure DevOps and GitHub Asset Bundles ensures repeatable and controlled promotion across Dev → Test → Prod environments.
+
+Business Value & Analytics Enablement:
+
+Curated datasets accessible via Databricks SQL Warehouse, Synapse Analytics, and Power BI Partner Connect.
+
+Analysts and data scientists empowered to query and visualize datasets independently, reducing reliance on engineering.
+
+Accelerated decision-making with reliable, production-ready data; estimated reduction of 2–3 hours/week in manual reporting efforts.
+
+Key KPIs:
+
+Incremental ingestion success rate: 100%
+
+Schema evolution handling: 100% automated
+
+Data duplication prevention: 0 duplicates
+
+SCD Type 2 accuracy: 100% for all dimensions
+
+BI adoption: 100% of curated datasets accessible for self-service reporting
+
+Result Statement:
+Delivered a fully automated, enterprise-grade data pipeline with high data quality, historical tracking, and self-service analytics capabilities—enabling faster, more accurate business decisions and reducing manual engineering effort.
 <img width="1444" height="902" alt="CI:CD" src="https://github.com/user-attachments/assets/19fe16d3-200a-4da4-be53-b9be391e7d4f" />
 
 For the detailed Storytelling of this project please visit this link: https://www.jesseportfolio.co.uk/post/musicstreaming-azure-data-engineering-project-with-ci-cd-and-databricks_asset_bundles
