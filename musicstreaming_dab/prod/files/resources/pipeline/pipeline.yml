@@ -4,11 +4,11 @@ resources:
       name: DLT Curated Layer
       libraries:
         - glob:
-            include: /Workspace/Users/jessepepple36@gmail.com/musicstreaming_dab/src/gold/DLT
+            include: ../../src/gold/DLT
               Curated Layer/transformations/**
       schema: gold
       photon: true
       catalog: musicstreaming_project
       serverless: true
-      root_path: /Users/jessepepple36@gmail.com/musicstreaming_dab/src/gold/DLT
+      root_path: ../../musicstreaming_dab/src/gold/DLT
         Curated Layer
