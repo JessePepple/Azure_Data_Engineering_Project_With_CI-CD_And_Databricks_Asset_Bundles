@@ -1,4 +1,11 @@
 # Azure_Data_Engineering_Project_With_CI-CD_And_Databricks_Asset_Bundles
+
+
+## Project Structure
+Databricks notebooks and pipeline configurations are located in musicstreaming_dab/prod/ and deployed via Databricks Asset Bundles. The databricks.yml file in that directory defines the bundle configuration for Dev → Test → Prod promotion. ADF pipeline artefacts are in pipeline/, dataset/, and linkedService/.
+This was the first project in this portfolio to implement full CI/CD via Databricks Asset Bundles — the pattern was refined and carried forward into the Sales pipeline project.
+
+
 ## Overview
 
 This project demonstrates a complete Azure Data Engineering solution that processes data from ingestion to transformation and delivery using modern cloud-native best practices. The architecture leverages Azure SQL, Azure Data Factory, Azure Databricks, and Delta Live Tables (DLT) to build a scalable, reliable, and production-ready data pipeline.
