@@ -335,6 +335,10 @@ Curated tables from Databricks were loaded into the Gold layer of our Data Lake 
 
 <img width="1440" height="718" alt="Screenshot 2025-11-20 at 06 35 41" src="https://github.com/user-attachments/assets/95242f46-9750-4730-9bdf-0631376bdd43" />
 
+## Unit Testing
+Since we have four major functions but two of them were just autoloader ingestion I plainly performed tests on just two of our granular functions. Before deploying our Asset Bundles, I performed unit testing in Databricks to validate that our class functions returned the expected results without any issues.
+
+<img width="1239" height="679" alt="Screenshot 2026-03-21 at 23 27 17" src="https://github.com/user-attachments/assets/f2d0c71d-4d21-4f04-a537-8f87113e2c9e" />
 
 ## Databricks SQL Warehouse
 
