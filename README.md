@@ -221,7 +221,6 @@ Number of tables ingested dynamically: 5 tables fully parameterized
 
 
 
-Processing efficiency: Reduced unnecessary full-load reruns → saved X% runtime per pipeline execution
 
 
 
@@ -267,8 +266,6 @@ Schema evolution handling: 100% of schema changes processed automatically
 Data quality: 0% data loss during transformation
 
 
-
-Processing runtime improvement: Streaming + Auto Loader reduced batch runtime by X% compared to traditional batch methods
 
 Result Statement:
 
